@@ -8,10 +8,10 @@ import time
 #callback_uri='oob' #this is used for opening twitter in browsers
 
 #These 4 arguments are unique to each user and can be obtained from developer twitter API
-consumer_key ='eygElHv3E63b9gucNtcWuiAF9' #this is available under API Key
-consumer_secret ='d88Qe876fInIIeUm1kcOYvwR2mMQ58cFOf5XHSCz48GW28NOVv' #API key secret
-token ='1355410710193336320-igmW1TTV5PEnGtP5fkTIWFFCOa1luG' #Access Token
-token_secret ='cmLtgL1j6j2RFNrcRL57KFs6qCzPsNs8L3D3JI1rlmYDj' #Access token secret
+consumer_key ='' #this is available under API Key
+consumer_secret ='' #API key secret
+token ='' #Access Token
+token_secret ='' #Access token secret
 
 #OAuthHandler authenticates the above details.
 auth=tweepy.OAuthHandler(consumer_key,consumer_secret)
@@ -24,7 +24,7 @@ api=tweepy.API(auth,wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 #@KindBot2 for the output
 
 #this file contains the people who tagged the bot
-FILE_NAME='D:\\Games\\Projects Folder\\Twitter Bot\\tagged_users.txt'
+FILE_NAME='tagged_users.txt'
 #Empty file just in case for the kindness shower
 file_name=""
 def get_tagged_users(file_name):
@@ -45,7 +45,7 @@ def take_kind_words(file_name):
      return kind
 
 def pick_statement():
-     kind=take_kind_words('D:\Games\Projects Folder\Twitter Bot\kindness.txt')
+     kind=take_kind_words('kindness.txt')
      kind_words=random.choice(kind)
      return kind_words
 
