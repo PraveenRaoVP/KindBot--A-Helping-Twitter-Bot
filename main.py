@@ -27,6 +27,8 @@ api=tweepy.API(auth,wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 FILE_NAME='tagged_users.txt'
 #Empty file just in case for the kindness shower
 file_name=""
+
+#get the user tag who tagged the bot
 def get_tagged_users(file_name):
      f=open(file_name ,'r')
      tag_user=f.read().strip()
@@ -39,16 +41,19 @@ def put_tagged_user(tag_user, file_name):
      f.close()
      return 
 
+
 def take_kind_words(file_name):
      f=open(file_name ,'r')
      kind=f.read().split('\n')
      return kind
 
+#choose the kind statement
 def pick_statement():
      kind=take_kind_words('kindness.txt')
      kind_words=random.choice(kind)
      return kind_words
 
+#tweet the kind statement to user
 def tweet_to_user():
      kindness_words=pick_statement()
      kindness_words=""
